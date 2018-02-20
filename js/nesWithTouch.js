@@ -7863,7 +7863,7 @@ PadFairy.prototype.recycle = function() {
 };
 window.requestAnimFrame = (function() {
     return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(a) {
-        window.setTimeout(a, 35)
+        window.setTimeout(a, 32)
     }
 })();
 
@@ -7899,7 +7899,7 @@ NesController.prototype.start = function() {
     var b = this;
     var a = function() {
         if (b.running_) {
-            window.setTimeout(a,32);
+            window.requestAnimFrame(a);
         }
         b.machine_.run()
     };
