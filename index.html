@@ -13,17 +13,12 @@
 	body{
 		background:#c1c3c5;
 	}
-	.screen_container_bg{
-		width:98%;
-		text-align:center;
-		position:absolute;
-		top:5%;
-		left:1%;
-		z-index:-1;
-	}
 	.screen_container{
 		width:90%;
-		padding:12.5% 5% 4% 5%;
+		margin:5% 1% 0% 1%;
+		padding:4%;
+		border-radius:5%;
+		background:#546463;
 	}
 	.Screen{
 		width:100%;
@@ -37,7 +32,6 @@
 </head>
 
 <body>
-<img class="screen_container_bg" src="img/emu/screen2.png"/>
 <div class="screen_container">
 	<canvas id="nes_screen" class="Screen" width="256" height="240"></canvas>
 </div> 

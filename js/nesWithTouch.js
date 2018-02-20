@@ -7791,7 +7791,7 @@ PadFairy.prototype.recycle = function() {
 };
 window.requestAnimFrame = (function() {
     return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(a) {
-        window.setTimeout(a, 32)
+        window.setTimeout(a, 16)
     }
 })();
 
