@@ -1,4 +1,4 @@
-var fps=60;
+var fps=30;
 var second=1000/fps;
 var cycloa = {};
 cycloa.err = {};
