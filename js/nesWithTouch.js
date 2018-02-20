@@ -7781,81 +7781,9 @@ AudioFairy.prototype.recycle = function() {
     this.dataIndex = 0
 };
 
-function PadFairy(a) {
+function PadFairy() {
     this.state = 0;
     var b = this;
-    a.bind("keydown", function(c) {
-        switch (c.keyCode) {
-            case 38:
-                b.state |= b.MASK_UP;
-                c.preventDefault();
-                break;
-            case 40:
-                b.state |= b.MASK_DOWN;
-                c.preventDefault();
-                break;
-            case 37:
-                b.state |= b.MASK_LEFT;
-                c.preventDefault();
-                break;
-            case 39:
-                b.state |= b.MASK_RIGHT;
-                c.preventDefault();
-                break;
-            case 90:
-                b.state |= b.MASK_A;
-                c.preventDefault();
-                break;
-            case 88:
-                b.state |= b.MASK_B;
-                c.preventDefault();
-                break;
-            case 32:
-                b.state |= b.MASK_SELECT;
-                c.preventDefault();
-                break;
-            case 13:
-                b.state |= b.MASK_START;
-                c.preventDefault();
-                break
-        }
-    });
-    a.bind("keyup", function(c) {
-        switch (c.keyCode) {
-            case 38:
-                b.state &= ~b.MASK_UP;
-                c.preventDefault();
-                break;
-            case 40:
-                b.state &= ~b.MASK_DOWN;
-                c.preventDefault();
-                break;
-            case 37:
-                b.state &= ~b.MASK_LEFT;
-                c.preventDefault();
-                break;
-            case 39:
-                b.state &= ~b.MASK_RIGHT;
-                c.preventDefault();
-                break;
-            case 90:
-                b.state &= ~b.MASK_A;
-                c.preventDefault();
-                break;
-            case 88:
-                b.state &= ~b.MASK_B;
-                c.preventDefault();
-                break;
-            case 32:
-                b.state &= ~b.MASK_SELECT;
-                c.preventDefault();
-                break;
-            case 13:
-                b.state &= ~b.MASK_START;
-                c.preventDefault();
-                break
-        }
-    })
 }
 PadFairy.prototype.__proto__ = cycloa.AbstractPadFairy.prototype;
 PadFairy.prototype.recycle = function() {
@@ -7870,7 +7798,7 @@ window.requestAnimFrame = (function() {
 function NesController(a) {
     this.videoFairy_ = new VideoFairy(a);
     this.audioFairy_ = new AudioFairy();
-    this.padFairy_ = new PadFairy($(document));
+    this.padFairy_ = new PadFairy();
     this.machine_ = new cycloa.VirtualMachine(this.videoFairy_, this.audioFairy_, this.padFairy_);
     this.running_ = false;
     this.loaded_ = false
