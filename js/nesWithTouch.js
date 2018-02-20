@@ -1,3 +1,5 @@
+var fps=60;
+var second=1000/fps;
 var cycloa = {};
 cycloa.err = {};
 cycloa.util = {};
@@ -7791,7 +7793,7 @@ PadFairy.prototype.recycle = function() {
 };
 window.requestAnimFrame = (function() {
     return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(a) {
-        window.setTimeout(a, 16)
+        window.setTimeout(a, second)
     }
 })();
 
